@@ -58,8 +58,4 @@ SampleSongsAPI.songs(for: "Earth, Wind, & Fire").call().then { response in
 }.catch { error in
     someErrorHandler(error)
 }
-
-
-
-
-
+```
