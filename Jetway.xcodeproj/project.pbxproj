@@ -114,9 +114,9 @@
 		2E17B8812235628A007292ED /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		2E17B883223566E7007292ED /* SampleSongsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSongsAPI.swift; sourceTree = "<group>"; };
 		2E17B88522357895007292ED /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		2E17B8922235E68A007292ED /* Jetway_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E17B89F2235E6AE007292ED /* Jetway_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E17B8B62235E6FF007292ED /* Jetway_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E17B8922235E68A007292ED /* Jetway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E17B89F2235E6AE007292ED /* Jetway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E17B8B62235E6FF007292ED /* Jetway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +173,9 @@
 			children = (
 				2E17B85922356013007292ED /* Jetway.framework */,
 				2E17B86222356013007292ED /* JetwayTests.xctest */,
-				2E17B8922235E68A007292ED /* Jetway_watchOS.framework */,
-				2E17B89F2235E6AE007292ED /* Jetway_macOS.framework */,
-				2E17B8B62235E6FF007292ED /* Jetway_tvOS.framework */,
+				2E17B8922235E68A007292ED /* Jetway.framework */,
+				2E17B89F2235E6AE007292ED /* Jetway.framework */,
+				2E17B8B62235E6FF007292ED /* Jetway.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,9 +240,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2E17B85822356013007292ED /* Jetway */ = {
+		2E17B85822356013007292ED /* Jetway_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E17B86D22356014007292ED /* Build configuration list for PBXNativeTarget "Jetway" */;
+			buildConfigurationList = 2E17B86D22356014007292ED /* Build configuration list for PBXNativeTarget "Jetway_iOS" */;
 			buildPhases = (
 				2E17B85422356013007292ED /* Headers */,
 				2E17B85522356013007292ED /* Sources */,
@@ -253,7 +253,7 @@
 			);
 			dependencies = (
 			);
-			name = Jetway;
+			name = Jetway_iOS;
 			productName = Jetway;
 			productReference = 2E17B85922356013007292ED /* Jetway.framework */;
 			productType = "com.apple.product-type.framework";
@@ -291,7 +291,7 @@
 			);
 			name = Jetway_watchOS;
 			productName = Jetway_watchOS;
-			productReference = 2E17B8922235E68A007292ED /* Jetway_watchOS.framework */;
+			productReference = 2E17B8922235E68A007292ED /* Jetway.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2E17B89E2235E6AE007292ED /* Jetway_macOS */ = {
@@ -309,7 +309,7 @@
 			);
 			name = Jetway_macOS;
 			productName = Jetway_macOS;
-			productReference = 2E17B89F2235E6AE007292ED /* Jetway_macOS.framework */;
+			productReference = 2E17B89F2235E6AE007292ED /* Jetway.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2E17B8B52235E6FF007292ED /* Jetway_tvOS */ = {
@@ -327,7 +327,7 @@
 			);
 			name = Jetway_tvOS;
 			productName = Jetway_tvOS;
-			productReference = 2E17B8B62235E6FF007292ED /* Jetway_tvOS.framework */;
+			productReference = 2E17B8B62235E6FF007292ED /* Jetway.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -374,7 +374,7 @@
 			projectRoot = "";
 			targets = (
 				2E17B8A72235E6D7007292ED /* Jeyway */,
-				2E17B85822356013007292ED /* Jetway */,
+				2E17B85822356013007292ED /* Jetway_iOS */,
 				2E17B8912235E68A007292ED /* Jetway_watchOS */,
 				2E17B8B52235E6FF007292ED /* Jetway_tvOS */,
 				2E17B89E2235E6AE007292ED /* Jetway_macOS */,
@@ -496,12 +496,12 @@
 /* Begin PBXTargetDependency section */
 		2E17B86522356014007292ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2E17B85822356013007292ED /* Jetway */;
+			target = 2E17B85822356013007292ED /* Jetway_iOS */;
 			targetProxy = 2E17B86422356014007292ED /* PBXContainerItemProxy */;
 		};
 		2E17B8AC2235E6E7007292ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2E17B85822356013007292ED /* Jetway */;
+			target = 2E17B85822356013007292ED /* Jetway_iOS */;
 			targetProxy = 2E17B8AB2235E6E7007292ED /* PBXContainerItemProxy */;
 		};
 		2E17B8AE2235E6E8007292ED /* PBXTargetDependency */ = {
@@ -666,7 +666,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.calstephens.Jetway;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -695,7 +695,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.calstephens.Jetway;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -757,7 +757,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -784,7 +784,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -813,7 +813,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -840,7 +840,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -884,7 +884,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -910,7 +910,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Jetway-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Jetway;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -931,7 +931,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E17B86D22356014007292ED /* Build configuration list for PBXNativeTarget "Jetway" */ = {
+		2E17B86D22356014007292ED /* Build configuration list for PBXNativeTarget "Jetway_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E17B86E22356014007292ED /* Debug */,
