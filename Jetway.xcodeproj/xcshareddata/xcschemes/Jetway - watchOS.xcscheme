@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E17B8912235E68A007292ED"
-               BuildableName = "Jetway_watchOS.framework"
+               BuildableName = "Jetway.framework"
                BlueprintName = "Jetway_watchOS"
                ReferencedContainer = "container:Jetway.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E17B8912235E68A007292ED"
-            BuildableName = "Jetway_watchOS.framework"
+            BuildableName = "Jetway.framework"
             BlueprintName = "Jetway_watchOS"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E17B8912235E68A007292ED"
-            BuildableName = "Jetway_watchOS.framework"
+            BuildableName = "Jetway.framework"
             BlueprintName = "Jetway_watchOS"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>

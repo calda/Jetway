@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E17B85822356013007292ED"
-               BuildableName = "Jetway_iOS.framework"
+               BuildableName = "Jetway.framework"
                BlueprintName = "Jetway_iOS"
                ReferencedContainer = "container:Jetway.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E17B85822356013007292ED"
-            BuildableName = "Jetway_iOS.framework"
+            BuildableName = "Jetway.framework"
             BlueprintName = "Jetway_iOS"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E17B85822356013007292ED"
-            BuildableName = "Jetway_iOS.framework"
+            BuildableName = "Jetway.framework"
             BlueprintName = "Jetway_iOS"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>

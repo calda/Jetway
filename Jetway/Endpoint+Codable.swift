@@ -17,7 +17,7 @@ extension Endpoint where
     private var defaultEncoder: AnyEncoder {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
-        return encoder
+        return AnyEncoder(encoder)
     }
     
     func configure(_ request: inout URLRequest, with requestValue: RequestType) throws {
@@ -41,7 +41,7 @@ extension Endpoint where
     private var defaultDecoder: AnyDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        return decoder
+        return AnyDecoder(decoder)
     }
     
     func decodeResponsePayload(_ data: Data) throws -> ResponseType {
