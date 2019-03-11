@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2E17B85822356013007292ED"
-               BuildableName = "Jetway.framework"
-               BlueprintName = "Jetway"
+               BlueprintIdentifier = "2E17B8A72235E6D7007292ED"
+               BuildableName = "Jeyway"
+               BlueprintName = "Jeyway"
                ReferencedContainer = "container:Jetway.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E17B86122356013007292ED"
@@ -43,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E17B85822356013007292ED"
-            BuildableName = "Jetway.framework"
-            BlueprintName = "Jetway"
+            BlueprintIdentifier = "2E17B8A72235E6D7007292ED"
+            BuildableName = "Jeyway"
+            BlueprintName = "Jeyway"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E17B85822356013007292ED"
-            BuildableName = "Jetway.framework"
-            BlueprintName = "Jetway"
+            BlueprintIdentifier = "2E17B8A72235E6D7007292ED"
+            BuildableName = "Jeyway"
+            BlueprintName = "Jeyway"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +84,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E17B85822356013007292ED"
-            BuildableName = "Jetway.framework"
-            BlueprintName = "Jetway"
+            BlueprintIdentifier = "2E17B8A72235E6D7007292ED"
+            BuildableName = "Jeyway"
+            BlueprintName = "Jeyway"
             ReferencedContainer = "container:Jetway.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
