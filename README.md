@@ -1,7 +1,7 @@
 # Jetway
 A Swift framework for creating and calling statically-typed API endpoints
 
-I'm currently using this as my networking layer in an upcoming update to [Window.app](https://itunes.apple.com/us/app/window-fasting-tracker/id1112765909?mt=8). 
+⚠️ This framework is currently in `alpha`. Expect frequent changes and additions to the public API.
 
 ## Usage
 
@@ -58,4 +58,63 @@ SampleSongsAPI.songs(for: "Earth, Wind, & Fire").call().then { response in
 }.catch { error in
     someErrorHandler(error)
 }
+```
+
+### Example API from Window.app
+
+I'm using Jetway as the networking layer in [Window.app](https://itunes.apple.com/us/app/window-fasting-tracker/id1112765909?mt=8):
+
+```swift
+import Jetway
+
+public enum SocialAPI {
+    
+    public static func configure() {
+        BaseURL.default = "https://api.windowfasting.app/"
+        
+        RequestCredentialsStore.global.registerCredentialsProvider({
+            return try UserManager.currentSession()
+        })
+    }
+    
+}
+
+public typealias AuthenticatedEndpoint<RequestType, ResponseType>
+    = Endpoint<RequestType, ResponseType, Requires<AuthenticatedSession>>
+
+
+// MARK: - User Endpoints
+
+public extension SocialAPI {
+    
+    public static func createNewUser() -> PublicEndpoint<User.Registration, User> {
+        return .endpoint(.POST, "/users")
+    }
+    
+    public static func getUser(with id: User.ID) -> Endpoint<Void, User, Requires<AuthorizationToken>> {
+        return .endpoint(.GET, "/users/\(id)")
+    }
+    
+    public static func updateProfile(for user: User) -> AuthenticatedEndpoint<User.Profile, User> {
+        return .endpoint(.PUT, "/users/\(user.id)/profile")
+    }
+    
+    public static func updateProfilePicture(for user: User) -> AuthenticatedEndpoint<CodableImage, User> {
+        return .endpoint(.PUT, "/users/\(user.id)/profile/picture", additionalRequestConfiguring: { request in
+            request.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
+        })
+    }
+    
+    public static func getProfilePicture(for user: User) -> PublicEndpoint<Void, CodableImage> {
+        return .endpoint(.GET, "/users/\(user.id)/profile/picture")
+    }
+    
+    public static func registerDevice(for user: User) -> AuthenticatedEndpoint<Device, Void> {
+        return .endpoint(.POST, "/users/\(user.id)/devices")
+    }
+    
+}
+
+...
+
 ```
