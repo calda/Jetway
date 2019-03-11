@@ -14,6 +14,9 @@ import Foundation
 // Since those methods have to return an actual container, we have to create an
 // `Unsupported(Unkeyed/Keyed)(Encoding/Decoding)Container` that just throws on every operation.
 // Those for Unsupported* containers account for like 75%+ of the boilerplate in this file.
+//
+// A Swift Evolution thread about this topic:
+// https://forums.swift.org/t/nestedcontainer-in-keyedencodingcontainer-and-unkeyedencodingcontainer-should-be-throwing/
 
 
 // MARK: - DataEncoder
