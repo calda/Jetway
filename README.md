@@ -8,6 +8,19 @@ A Swift framework for creating and calling statically-typed API endpoints
 Rigorous documentation will come later. Here's a small sample from [JetwayTests.xctest](https://github.com/calda/Jetway/tree/master/JetwayTests):
 
 ```swift
+enum SampleSongsAPI {
+    
+    static func configure() {
+        BaseURL.default = URL(string: "https://itunes.apple.com")!
+    }
+    
+    static func songs(for query: String) -> PublicEndpoint<Void, SongsResponse> {
+        let encodedTerm = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        return .endpoint(.GET, "search?term=\(encodedTerm)&entity=song")
+    }
+    
+}
+
 struct SongResponse: Codable {
     let results: [Song]
 }
@@ -16,23 +29,7 @@ struct Song: Codable {
     let trackName: String
     let artistName: String
 }
-```
 
-```swift
-// MARK: - SampleSongsAPI
-
-enum SampleSongsAPI {
-    
-    static func configure() {
-        BaseURL.default = URL(string: "https://itunes.apple.com")!
-    }
-    
-    static func songs(for query: String) -> PublicEndpoint<Void, SongResponse> {
-        let encodedTerm = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return .endpoint(.GET, "search?term=\(encodedTerm)&entity=song")
-    }
-    
-}
 ```
 
 ```swift
@@ -42,7 +39,7 @@ SampleSongsAPI.configure()
 // calling an Endpoint
 SampleSongsAPI.songs(for: "Earth, Wind, & Fire").call().then { response in
 
-    // SongResponse
+    // SongsResponse
     //   ▿ results : 50 elements
     //     ▿ 0 : Song
     //     - trackName : "September"
