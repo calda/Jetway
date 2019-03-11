@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Jetway
+import Jetway
 
 /// TODO: Add a set of tests that don't depend on making actual URLSession requests
 class JetwayTests: XCTestCase {
