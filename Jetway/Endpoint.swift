@@ -33,14 +33,14 @@ public struct Endpoint
     ResponseType,
     CredentialsProviderType: CredentialsProvider>
 {
-    public let method: HTTPMethod
+    public let method: HTTP.Method
     public let path: String
     public let additionalRequestConfiguring: ((inout URLRequest) -> Void)?
     
     /// Initializes a new Endpoint.
     ///
     /// - Parameters:
-    ///   - method: The HTTPMethod to be used as a part of the URLRequest.
+    ///   - method: The HTTP Method to be used as a part of the URLRequest.
     ///   - path: The path of the endpoint on the server.
     ///   - additionalRequestConfiguring: Additional configuration that can be
     ///                                   performed on the `URLRequest` before it is executed.
@@ -48,7 +48,7 @@ public struct Endpoint
     /// - Note: If `path` begins with `http`, then it is assumed to be a fully quantified URL.
     ///         Otherwise, it is appended to `BaseURL.default`.
     ///
-    public init(method: HTTPMethod, path: String, additionalRequestConfiguring: ((inout URLRequest) -> Void)?) {
+    public init(method: HTTP.Method, path: String, additionalRequestConfiguring: ((inout URLRequest) -> Void)?) {
         self.method = method
         self.path = path
         self.additionalRequestConfiguring = additionalRequestConfiguring
@@ -57,7 +57,7 @@ public struct Endpoint
     /// Initializes a new Endpoint.
     ///
     /// - Parameters:
-    ///   - method: The HTTPMethod to be used as a part of the URLRequest.
+    ///   - method: The HTTP Method to be used as a part of the URLRequest.
     ///   - path: The path of the endpoint on the server.
     ///   - additionalRequestConfiguring: Additional configuration that can be
     ///                                   performed on the `URLRequest` before it is executed.
@@ -65,7 +65,7 @@ public struct Endpoint
     /// - Note: If `path` begins with `http`, then it is assumed to be a fully quantified URL.
     ///         Otherwise, it is appended to `BaseURL.default`.
     public static func endpoint(
-        _ method: HTTPMethod,
+        _ method: HTTP.Method,
         _ path: String,
         additionalRequestConfiguring: ((inout URLRequest) -> Void)? = nil) -> Endpoint
     {

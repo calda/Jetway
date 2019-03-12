@@ -21,7 +21,7 @@ extension Endpoint where
     }
     
     func configure(_ request: inout URLRequest, with requestValue: RequestType) throws {
-        request.httpMethod = method.rawValue
+        request.method = method
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         let encoder = (RequestType.self as? EncoderProvider.Type)?.preferredEncoder ?? defaultEncoder

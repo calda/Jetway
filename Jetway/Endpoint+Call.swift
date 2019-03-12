@@ -74,7 +74,7 @@ fileprivate enum EndpointNetworking {
         // (e.g. provide a request body or authorization credentials)
         do {
             request = URLRequest(url: try endpoint.url(), timeoutInterval: 10)
-            request.httpMethod = endpoint.method.rawValue
+            request.method = endpoint.method
             try requestValueConfiguring(&request)
             try CredentialsProviderType.credentials().configure(&request)
         } catch (let error) {
@@ -89,8 +89,8 @@ fileprivate enum EndpointNetworking {
                 return
             }
             
-            guard response.statusCode == 200 /* ok */ else {
-                promise.reject(ServerError.from(statusCode: response.statusCode, body: data, path: endpointUrlString))
+            guard response.httpStatusCode == .ok else {
+                promise.reject(ServerError.from(response.httpStatusCode, body: data, path: endpointUrlString))
                 return
             }
             
@@ -114,7 +114,7 @@ fileprivate enum EndpointNetworking {
             } catch (let error) {
                 promise.reject(error)
             }
-            }.resume()
+        }.resume()
         
         return promise
     }
@@ -124,6 +124,7 @@ fileprivate enum EndpointNetworking {
 
 // MARK: - ServerError
 
+// TODO: this is specific to my API -- this should probably be genericized as a part of that `API` type I'm thinking about, and lifted into Window.app.
 public enum ServerError: LocalizedError {
     
     case cannotConnect
@@ -132,7 +133,7 @@ public enum ServerError: LocalizedError {
     case notAcceptable(reason: String)
     case conflict(reason: String)
     case noContent(reason: String)
-    case unknown(statusCode: Int, reason: String)
+    case unknown(statusCode: HTTP.StatusCode, reason: String)
     
     public var errorDescription: String? {
         switch self {
@@ -149,11 +150,11 @@ public enum ServerError: LocalizedError {
         case .noContent(let reason):
             return "There was no content available on the server. (\(reason))"
         case .unknown(let statusCode, let reason):
-            return "An unknown error occured. (Code \(statusCode): \(reason))"
+            return "An unknown error occured. (\(statusCode): \(reason))"
         }
     }
     
-    static func from(statusCode: Int, body: Data?, path: String) -> ServerError {
+    static func from(_ statusCode: HTTP.StatusCode, body: Data?, path: String) -> ServerError {
         let errorReason: String
         
         if let body = body,
@@ -166,13 +167,12 @@ public enum ServerError: LocalizedError {
             errorReason = "No reason provided."
         }
         
-        /// https://www.restapitutorial.com/httpstatuscodes.html
         switch statusCode {
-        case 204: return .noContent(reason: errorReason)
-        case 401: return .unauthorized
-        case 404: return .notFound(resource: path)
-        case 406: return .notAcceptable(reason: errorReason)
-        case 409: return .conflict(reason: errorReason)
+        case .noContent: return .noContent(reason: errorReason)
+        case .unauthorized: return .unauthorized
+        case .notFound: return .notFound(resource: path)
+        case .notAcceptable: return .notAcceptable(reason: errorReason)
+        case .conflict: return .conflict(reason: errorReason)
         default: return .unknown(statusCode: statusCode, reason: errorReason)
         }
     }
