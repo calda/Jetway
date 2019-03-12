@@ -8,9 +8,12 @@
 
 import Foundation
 
+
 /// An Endpoint that doesn't require any credentials.
-public typealias PublicEndpoint<RequestType, ResponseType>
-    = Endpoint<RequestType, ResponseType, NoAuthenticationRequired>
+public typealias PublicEndpoint<RequestType, ResponseType> = Endpoint<RequestType, ResponseType, NoAuthenticationRequired>
+
+/// An Endpoint that performs some action without any Request content or Response content
+public typealias ActionEndpoint<CredentialsProviderType: CredentialsProvider> = Endpoint<Void, Void, CredentialsProviderType>
 
 
 /// An statically-typed API endpoint.
@@ -69,6 +72,9 @@ public struct Endpoint
         return Endpoint(method: method, path: path, additionalRequestConfiguring: additionalRequestConfiguring)
     }
     
+    // TODO: When I restructure this to have an `API` object passed down into the `Endpoint`,
+    // get rid of this awful `http prefix` hack. Always use the base URL from the `API`.
+    //
     /// Constructs a URL from the Endpoint's path value.
     ///  - If the path value starts with `http`, it's assumed to be a fully qualified URL.
     ///    Otherwise, it is appended to `BaseURL.default`.

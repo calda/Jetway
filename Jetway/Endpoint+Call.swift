@@ -74,6 +74,7 @@ fileprivate enum EndpointNetworking {
         // (e.g. provide a request body or authorization credentials)
         do {
             request = URLRequest(url: try endpoint.url(), timeoutInterval: 10)
+            request.httpMethod = endpoint.method.rawValue
             try requestValueConfiguring(&request)
             try CredentialsProviderType.credentials().configure(&request)
         } catch (let error) {
