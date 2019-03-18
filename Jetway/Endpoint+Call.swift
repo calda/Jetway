@@ -76,7 +76,11 @@ fileprivate enum EndpointNetworking {
             request = URLRequest(url: try endpoint.url(), timeoutInterval: 10)
             request.method = endpoint.method
             try requestValueConfiguring(&request)
-            try CredentialsProviderType.credentials().configure(&request)
+            try CredentialsProviderType.credentials(in: endpoint.api).configure(&request)
+            
+            for (key, value) in endpoint.api.requestHeaders {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
         } catch (let error) {
             promise.reject(error)
             return promise
@@ -150,7 +154,7 @@ public enum ServerError: LocalizedError {
         case .noContent(let reason):
             return "There was no content available on the server. (\(reason))"
         case .unknown(let statusCode, let reason):
-            return "An unknown error occured. (\(statusCode): \(reason))"
+            return "\(statusCode): \(reason)"
         }
     }
     

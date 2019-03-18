@@ -11,7 +11,7 @@ import Foundation
 
 public protocol CredentialsProvider {
     associatedtype CredentialsType: Credentials
-    static func credentials() throws -> CredentialsType
+    static func credentials(in api: JetwayAPI) throws -> CredentialsType
 }
 
 public protocol Credentials {
@@ -31,7 +31,7 @@ public struct NoAuthenticationRequired: CredentialsProvider {
         }
     }
     
-    public static func credentials() throws -> NoAuthenticationRequired.CredentialsType {
+    public static func credentials(in api: JetwayAPI) throws -> NoAuthenticationRequired.CredentialsType {
         return NoCredentials()
     }
     
@@ -42,8 +42,8 @@ public struct NoAuthenticationRequired: CredentialsProvider {
 
 public struct Requires<CredentialsType: Credentials>: CredentialsProvider {
     
-    public static func credentials() throws -> CredentialsType {
-        return try RequestCredentialsStore.global.credentials(of: CredentialsType.self)
+    public static func credentials(in api: JetwayAPI) throws -> CredentialsType {
+        return try api.credentialsStore.credentials(of: CredentialsType.self)
     }
     
 }
@@ -54,10 +54,7 @@ public struct Requires<CredentialsType: Credentials>: CredentialsProvider {
 /// A global store for blocks that provide credentials
 public class RequestCredentialsStore {
     
-    /// The global Credentials Store.
-    /// Credentials registered with this Store are automatically used in requests that require Credentials of that type.
-    public static let global = RequestCredentialsStore()
-    private init() { }
+    public init() { }
     
     private typealias CredentialsTypeName = String
     private var credentialsProviders = [CredentialsTypeName: () throws -> (Any)]()

@@ -32,7 +32,6 @@
 		2E17B87C22356102007292ED /* Endpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87B22356102007292ED /* Endpoint+Codable.swift */; };
 		2E17B87E22356197007292ED /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87D22356197007292ED /* Promise.swift */; };
 		2E17B880223561F0007292ED /* AnyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87F223561F0007292ED /* AnyEncoder.swift */; };
-		2E17B8822235628A007292ED /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8812235628A007292ED /* BaseURL.swift */; };
 		2E17B884223566E7007292ED /* SampleSongsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B883223566E7007292ED /* SampleSongsAPI.swift */; };
 		2E17B88622357895007292ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B88522357895007292ED /* HTTP.swift */; };
 		2E17B8BE2235E73B007292ED /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87322356043007292ED /* Endpoint.swift */; };
@@ -40,7 +39,6 @@
 		2E17B8C02235E73B007292ED /* Endpoint+Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B879223560AC007292ED /* Endpoint+Call.swift */; };
 		2E17B8C12235E73B007292ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B88522357895007292ED /* HTTP.swift */; };
 		2E17B8C22235E73B007292ED /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87722356085007292ED /* CredentialsProvider.swift */; };
-		2E17B8C32235E73B007292ED /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8812235628A007292ED /* BaseURL.swift */; };
 		2E17B8C42235E73B007292ED /* AnyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87F223561F0007292ED /* AnyEncoder.swift */; };
 		2E17B8C52235E73B007292ED /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87D22356197007292ED /* Promise.swift */; };
 		2E17B8C62235E73B007292ED /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87322356043007292ED /* Endpoint.swift */; };
@@ -48,7 +46,6 @@
 		2E17B8C82235E73B007292ED /* Endpoint+Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B879223560AC007292ED /* Endpoint+Call.swift */; };
 		2E17B8C92235E73B007292ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B88522357895007292ED /* HTTP.swift */; };
 		2E17B8CA2235E73B007292ED /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87722356085007292ED /* CredentialsProvider.swift */; };
-		2E17B8CB2235E73B007292ED /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8812235628A007292ED /* BaseURL.swift */; };
 		2E17B8CC2235E73B007292ED /* AnyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87F223561F0007292ED /* AnyEncoder.swift */; };
 		2E17B8CD2235E73B007292ED /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87D22356197007292ED /* Promise.swift */; };
 		2E17B8CE2235E73C007292ED /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87322356043007292ED /* Endpoint.swift */; };
@@ -56,7 +53,6 @@
 		2E17B8D02235E73C007292ED /* Endpoint+Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B879223560AC007292ED /* Endpoint+Call.swift */; };
 		2E17B8D12235E73C007292ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B88522357895007292ED /* HTTP.swift */; };
 		2E17B8D22235E73C007292ED /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87722356085007292ED /* CredentialsProvider.swift */; };
-		2E17B8D32235E73C007292ED /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8812235628A007292ED /* BaseURL.swift */; };
 		2E17B8D42235E73C007292ED /* AnyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87F223561F0007292ED /* AnyEncoder.swift */; };
 		2E17B8D52235E73C007292ED /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B87D22356197007292ED /* Promise.swift */; };
 		2E17B8F022368500007292ED /* DataEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8EF22368500007292ED /* DataEncoderTests.swift */; };
@@ -64,6 +60,14 @@
 		2E17B8F3223688D1007292ED /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8F1223688D1007292ED /* DataEncoder.swift */; };
 		2E17B8F4223688D1007292ED /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8F1223688D1007292ED /* DataEncoder.swift */; };
 		2E17B8F5223688D1007292ED /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B8F1223688D1007292ED /* DataEncoder.swift */; };
+		2E473BF22240556D00177CBD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF12240556D00177CBD /* API.swift */; };
+		2E473BF32240556D00177CBD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF12240556D00177CBD /* API.swift */; };
+		2E473BF42240556D00177CBD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF12240556D00177CBD /* API.swift */; };
+		2E473BF52240556D00177CBD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF12240556D00177CBD /* API.swift */; };
+		2E473BF722405DAE00177CBD /* String+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */; };
+		2E473BF822405DAE00177CBD /* String+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */; };
+		2E473BF922405DAE00177CBD /* String+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */; };
+		2E473BFA22405DAE00177CBD /* String+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +120,6 @@
 		2E17B87B22356102007292ED /* Endpoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Codable.swift"; sourceTree = "<group>"; };
 		2E17B87D22356197007292ED /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		2E17B87F223561F0007292ED /* AnyEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncoder.swift; sourceTree = "<group>"; };
-		2E17B8812235628A007292ED /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		2E17B883223566E7007292ED /* SampleSongsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSongsAPI.swift; sourceTree = "<group>"; };
 		2E17B88522357895007292ED /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		2E17B8922235E68A007292ED /* Jetway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,9 @@
 		2E17B8B62235E6FF007292ED /* Jetway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jetway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E17B8EF22368500007292ED /* DataEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoderTests.swift; sourceTree = "<group>"; };
 		2E17B8F1223688D1007292ED /* DataEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoder.swift; sourceTree = "<group>"; };
+		2E473BF12240556D00177CBD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoded.swift"; sourceTree = "<group>"; };
+		2E473BFB22405F4F00177CBD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		2E17B84F22356013007292ED = {
 			isa = PBXGroup;
 			children = (
+				2E473BFB22405F4F00177CBD /* README.md */,
 				2E17B85B22356013007292ED /* Jetway */,
 				2E17B86622356014007292ED /* JetwayTests */,
 				2E17B85A22356013007292ED /* Products */,
@@ -193,12 +200,13 @@
 				2E17B87322356043007292ED /* Endpoint.swift */,
 				2E17B87B22356102007292ED /* Endpoint+Codable.swift */,
 				2E17B879223560AC007292ED /* Endpoint+Call.swift */,
+				2E473BF12240556D00177CBD /* API.swift */,
 				2E17B88522357895007292ED /* HTTP.swift */,
 				2E17B87722356085007292ED /* CredentialsProvider.swift */,
-				2E17B8812235628A007292ED /* BaseURL.swift */,
 				2E17B87D22356197007292ED /* Promise.swift */,
 				2E17B87F223561F0007292ED /* AnyEncoder.swift */,
 				2E17B8F1223688D1007292ED /* DataEncoder.swift */,
+				2E473BF622405DAE00177CBD /* String+PercentEncoded.swift */,
 				2E17B85D22356013007292ED /* Info.plist */,
 			);
 			path = Jetway;
@@ -438,11 +446,12 @@
 				2E17B87822356085007292ED /* CredentialsProvider.swift in Sources */,
 				2E17B87C22356102007292ED /* Endpoint+Codable.swift in Sources */,
 				2E17B8F2223688D1007292ED /* DataEncoder.swift in Sources */,
+				2E473BF722405DAE00177CBD /* String+PercentEncoded.swift in Sources */,
 				2E17B880223561F0007292ED /* AnyEncoder.swift in Sources */,
+				2E473BF22240556D00177CBD /* API.swift in Sources */,
 				2E17B87A223560AC007292ED /* Endpoint+Call.swift in Sources */,
 				2E17B88622357895007292ED /* HTTP.swift in Sources */,
 				2E17B87422356043007292ED /* Endpoint.swift in Sources */,
-				2E17B8822235628A007292ED /* BaseURL.swift in Sources */,
 				2E17B87E22356197007292ED /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +473,8 @@
 				2E17B8C12235E73B007292ED /* HTTP.swift in Sources */,
 				2E17B8C02235E73B007292ED /* Endpoint+Call.swift in Sources */,
 				2E17B8F3223688D1007292ED /* DataEncoder.swift in Sources */,
-				2E17B8C32235E73B007292ED /* BaseURL.swift in Sources */,
+				2E473BF822405DAE00177CBD /* String+PercentEncoded.swift in Sources */,
+				2E473BF32240556D00177CBD /* API.swift in Sources */,
 				2E17B8BE2235E73B007292ED /* Endpoint.swift in Sources */,
 				2E17B8C22235E73B007292ED /* CredentialsProvider.swift in Sources */,
 				2E17B8BF2235E73B007292ED /* Endpoint+Codable.swift in Sources */,
@@ -480,7 +490,8 @@
 				2E17B8D12235E73C007292ED /* HTTP.swift in Sources */,
 				2E17B8D02235E73C007292ED /* Endpoint+Call.swift in Sources */,
 				2E17B8F5223688D1007292ED /* DataEncoder.swift in Sources */,
-				2E17B8D32235E73C007292ED /* BaseURL.swift in Sources */,
+				2E473BFA22405DAE00177CBD /* String+PercentEncoded.swift in Sources */,
+				2E473BF52240556D00177CBD /* API.swift in Sources */,
 				2E17B8CE2235E73C007292ED /* Endpoint.swift in Sources */,
 				2E17B8D22235E73C007292ED /* CredentialsProvider.swift in Sources */,
 				2E17B8CF2235E73C007292ED /* Endpoint+Codable.swift in Sources */,
@@ -496,7 +507,8 @@
 				2E17B8C92235E73B007292ED /* HTTP.swift in Sources */,
 				2E17B8C82235E73B007292ED /* Endpoint+Call.swift in Sources */,
 				2E17B8F4223688D1007292ED /* DataEncoder.swift in Sources */,
-				2E17B8CB2235E73B007292ED /* BaseURL.swift in Sources */,
+				2E473BF922405DAE00177CBD /* String+PercentEncoded.swift in Sources */,
+				2E473BF42240556D00177CBD /* API.swift in Sources */,
 				2E17B8C62235E73B007292ED /* Endpoint.swift in Sources */,
 				2E17B8CA2235E73B007292ED /* CredentialsProvider.swift in Sources */,
 				2E17B8C72235E73B007292ED /* Endpoint+Codable.swift in Sources */,

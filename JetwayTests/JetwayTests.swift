@@ -13,7 +13,6 @@ import Jetway
 class JetwayTests: XCTestCase {
     
     func testSampleSongsAPIResponse() {
-        SampleSongsAPI.configure()
         let expectation = XCTestExpectation(description: "Wait for Sample Songs API Request")
         
         SampleSongsAPI.songs(for: "Earth, Wind, & Fire").call().then { response in

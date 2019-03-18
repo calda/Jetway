@@ -33,6 +33,7 @@ public struct Endpoint
     ResponseType,
     CredentialsProviderType: CredentialsProvider>
 {
+    public let api: API
     public let method: HTTP.Method
     public let path: String
     public let additionalRequestConfiguring: ((inout URLRequest) -> Void)?
@@ -40,70 +41,47 @@ public struct Endpoint
     /// Initializes a new Endpoint.
     ///
     /// - Parameters:
+    ///   - api: The API that this Endpoint is a member of.
     ///   - method: The HTTP Method to be used as a part of the URLRequest.
     ///   - path: The path of the endpoint on the server.
     ///   - additionalRequestConfiguring: Additional configuration that can be
     ///                                   performed on the `URLRequest` before it is executed.
     ///
-    /// - Note: If `path` begins with `http`, then it is assumed to be a fully quantified URL.
-    ///         Otherwise, it is appended to `BaseURL.default`.
-    ///
-    public init(method: HTTP.Method, path: String, additionalRequestConfiguring: ((inout URLRequest) -> Void)?) {
+    public init(
+        in api: API,
+        method: HTTP.Method,
+        path: String,
+        additionalRequestConfiguring: ((inout URLRequest) -> Void)?)
+    {
+        self.api = api
         self.method = method
         self.path = path
         self.additionalRequestConfiguring = additionalRequestConfiguring
     }
     
-    /// Initializes a new Endpoint.
-    ///
-    /// - Parameters:
-    ///   - method: The HTTP Method to be used as a part of the URLRequest.
-    ///   - path: The path of the endpoint on the server.
-    ///   - additionalRequestConfiguring: Additional configuration that can be
-    ///                                   performed on the `URLRequest` before it is executed.
-    ///
-    /// - Note: If `path` begins with `http`, then it is assumed to be a fully quantified URL.
-    ///         Otherwise, it is appended to `BaseURL.default`.
-    public static func endpoint(
-        _ method: HTTP.Method,
-        _ path: String,
-        additionalRequestConfiguring: ((inout URLRequest) -> Void)? = nil) -> Endpoint
-    {
-        return Endpoint(method: method, path: path, additionalRequestConfiguring: additionalRequestConfiguring)
+    /// The full URL represented by this Endpoint.
+    public func url() throws -> URL {
+        let slash = CharacterSet(charactersIn: "/")
+        let fullUrlPath = api.baseUrl.absoluteString.trimmingCharacters(in: slash)
+            + "/"
+            + path.trimmingCharacters(in: slash)
+        
+        guard let fullUrl = URL(string: fullUrlPath) else {
+            throw Error.malformedUrl(fullUrlPath)
+        }
+        
+        return fullUrl
     }
     
-    // TODO: When I restructure this to have an `API` object passed down into the `Endpoint`,
-    // get rid of this awful `http prefix` hack. Always use the base URL from the `API`.
-    //
-    /// Constructs a URL from the Endpoint's path value.
-    ///  - If the path value starts with `http`, it's assumed to be a fully qualified URL.
-    ///    Otherwise, it is appended to `BaseURL.default`.
-    public func url() throws -> URL {
-        // if the path starts with `http`, we assume that it's a fully qualified URL
-        if path.hasPrefix("http") {
-            guard let url = URL(string: path) else {
-                throw EncodingError.invalidValue(path, EncodingError.Context(
-                    codingPath: [],
-                    debugDescription: "Could not construct a valid URL from the path provided."))
+    public enum Error: LocalizedError {
+        case malformedUrl(String)
+        
+        var localizedDescription: String {
+            switch self {
+            case .malformedUrl(let path):
+                return "Could not construct a URL from the given base and path pair (\(path))."
             }
-            
-            return url
         }
-        
-        // otherwise, append the path to the default base url
-        guard let baseUrl = BaseURL.default else {
-            throw BaseURL.Error.notProvided
-        }
-        
-        guard let endpointUrl = URL(string: path, relativeTo: baseUrl) else {
-            throw EncodingError.invalidValue(
-                baseUrl.absoluteString + "/" + path.trimmingCharacters(in: CharacterSet(charactersIn: "/")),
-                EncodingError.Context(
-                    codingPath: [],
-                    debugDescription: "Could not construct a valid URL from the path provided."))
-        }
-        
-        return endpointUrl
     }
     
 }

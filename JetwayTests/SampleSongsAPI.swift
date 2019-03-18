@@ -26,13 +26,10 @@ struct Song: Codable {
 
 enum SampleSongsAPI {
     
-    static func configure() {
-        BaseURL.default = URL(string: "https://itunes.apple.com")!
-    }
+    private static let api = API(baseUrl: "https://itunes.apple.com")
     
     static func songs(for query: String) -> PublicEndpoint<Void, SongResponse> {
-        let encodedTerm = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return .endpoint(.GET, "search?term=\(encodedTerm)&entity=song")
+        return api.endpoint(.GET, "search?term=\(query.percentEncoded)&entity=song")
     }
     
 }
